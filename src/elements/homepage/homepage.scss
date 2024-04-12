@@ -1,0 +1,141 @@
+@import '../../app.scss';
+
+.homepage{
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffe4, #ecd9ba);
+    position: relative;
+
+    .container{
+        height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        // overflow: hidden;
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        @include tablet{
+            flex-direction: column;
+        }
+
+        .text{
+            flex: 0.57;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @include mobile{
+                width: 100%;
+                height: 45%;
+                gap: 10px;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+
+            @include tablet{
+                width: 100%;
+                height: 45%;
+                gap: 10px;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                bottom: 50px;
+            }
+
+            h2{
+                font-size: 20px;
+                letter-spacing: 4px;
+                width: 100%;
+
+                @include mobile{
+                    font-size: 15px;
+                    letter-spacing: 2px;
+                    width: 100%;
+                }
+
+                @include tablet{
+                    font-size: 15px;
+                    width: 100%;
+                }
+            }
+            h1{
+                font-size: 50px;
+                letter-spacing: 5px;
+                color: #a07855;
+                line-height: 70px;
+                font-weight: 800;
+
+                @include mobile{
+                    font-size: 40px;
+                    letter-spacing: 3px;
+                }
+
+                @include tablet{
+                    font-size: 40px;
+                    letter-spacing: 3px;
+                }
+            }
+        }
+
+        .image{
+
+            @include mobile{
+                display: none;
+            }
+
+            .blob{
+                background: url(http://kayvandharsee.github.io/portfolio/kayvan.png);
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-position: center center;
+                height: 400px;
+                width: 400px;
+                box-shadow: 0 0px 20px 20px rgba(222,193,155,1);
+                animation: blob 5s ease-in-out infinite;
+                transition: all 1s ease-in-out;
+
+                @include tablet{
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+        }
+
+        .sliding-text{
+            position: absolute;
+            font-size: 30vh;
+            bottom: -20px;
+            white-space: nowrap;
+            color: #a0785517;
+            letter-spacing: 15px;
+            width: 50%;
+            font-weight: bold;
+
+            @include mobile{
+                display: none;
+            }
+
+            @include tablet{
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes blob{
+    // changes horizontal/vertical radius of circle for each 4 corners, for each state of animation
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+    50% {
+        border-radius: 42% 58% 58% 42% / 48% 61% 39% 52% 
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%
+    }
+}
